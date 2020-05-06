@@ -28,7 +28,7 @@ const bodyParser = require('body-parser');
  */
 const GoogleSpreadSheet = require('google-spreadsheet');
 
-// gerar credenciais do google
+// gerar credenciais do google e anexar aqui
 /* const credentials = require('./bugtrack.json');
  */
 /**
