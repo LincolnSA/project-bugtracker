@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BugTrack</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script>
+        //pegar informações do navegador do user (navegador + relogio)
+        document.onreadystatechange = () => {
+            if (document.readyState === 'interactive') {
+
+                document.getElementById('userAgent').value = window.navigator.userAgent;
+                document.getElementById('userDate').value = new Date;
+                console.log("ola", window.navigator.userAgent);
+                console.log("ola", new Date());
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/">Bug tracker</a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <h1>Ferramenta de relato de Bugs</h1>
+
+        <p>Preencha todos os dados a seguir</p>
+
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="issueType">Classificação:</label>
+                <select id="issueType" name="issueType" class="form-control">
+                    <option value="">Selecione</option>
+                    <option value="CRITICAL">Crítico</option>
+                    <option value="BUG">Falha</option>
+                    <option value="ENHANCEMENT">Melhoria</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="howToReproduce">Como reproduzir o error?</label>
+                <input type="text" id="howToReproduce" name="howToReproduce" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="expectedOutput">A saída esperada?</label>
+                <textarea type="text" id="expectedOutput" name="expectedOutput" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="receivedOutput">A saída recebida?</label>
+                <textarea type="text" id="receivedOutput" name="receivedOutput" class="form-control"></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <input type="hidden" id="userAgent" name="userAgent">
+                <input type="hidden" id="userDate" name="userDate" class="form-control">
+            </div>
+
+
+            <button class="btn btn-primary">Enviar Solicitação!</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
